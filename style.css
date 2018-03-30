@@ -1,0 +1,10 @@
+.img {
+    height : 11em;
+    width: 10em;
+    object-fit: cover;
+    object-position: bottom;
+}
+
+label {
+    font-weight: bold;
+}
