@@ -1,10 +1,77 @@
+body {
+    display: grid;
+    grid-template-colums: 25vw 25vw 25vw 25vw;
+    grid-template-rows: 10em auto 3em;
+    font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+#head {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row: 1;
+    background-color: #64625C;
+    padding: 0.5em;
+}
+
+#footer {
+    grid-column: 1/5;
+    grid-row: 3;
+    background-color: #006F54;
+}
+
+#personal {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 5em;
+}
+
+#knowledge {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#education {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#job {
+    grid-column: 4;
+    grid-row: 2;
+}
+
 .img {
-    height : 11em;
-    width: 10em;
+    height : 10em;
+    width: 9em;
     object-fit: cover;
     object-position: bottom;
 }
 
 label {
     font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding:0px;
+}
+
+h1 {
+    color: #fff;
+}
+
+h2 {
+    color: #96928D;
+    float: right;
+}
+
+h3 {
+    background-color: #006F54;
+    color: #ffffff;
+    padding: 5px;
+}
+
+h4 {
+    background-color: #96928D;
+    padding-left: 4px;
 }
