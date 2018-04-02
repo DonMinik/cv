@@ -1,43 +1,59 @@
 body {
     display: grid;
-    grid-template-colums: 25vw 25vw 25vw 25vw;
-    grid-template-rows: 10em auto 3em;
+    grid-template-colums: 33vw 33vw auto ;
+    grid-template-rows: 10em auto auto 3em;
+    grid-template-areas: "header header header"
+                         "personal education job"
+                         "knowledge knowledge knowledge"
+                         "footer footer footer"
+    ;
     font-family: "SF Pro Text","Myriad Set Pro","SF Pro Icons","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
+@media screen and (max-width: 60em) {
+    body {
+        grid-template-colums: 50vw 50vw;
+        grid-template-rows: 10em auto auto auto 3em;
+        grid-template-areas: "header header"
+        "personal knowledge"
+        "education knowledge"
+        "job knowledge"
+        "footer footer";
+    }
+}
+
 #head {
-    grid-column-start: 1;
-    grid-column-end: 5;
-    grid-row: 1;
+    grid-area: header;
     background-color: #64625C;
     padding: 0.5em;
 }
 
 #footer {
-    grid-column: 1/5;
-    grid-row: 3;
-    background-color: #006F54;
+    grid-area: footer;
+    background-color: #64625C;
 }
 
 #personal {
-    grid-column: 1;
-    grid-row: 2;
+    grid-area: personal;
     margin-top: 5em;
 }
 
 #knowledge {
-    grid-column: 2;
-    grid-row: 2;
+    grid-area: knowledge;
 }
 
+
 #education {
-    grid-column: 3;
-    grid-row: 2;
+    grid-area: education;
 }
 
 #job {
-    grid-column: 4;
-    grid-row: 2;
+    grid-area: job;
+}
+
+.gridded li {
+    display: grid;
+    grid-template-columns: auto 65%;
 }
 
 .img {
@@ -49,6 +65,10 @@ body {
 
 label {
     font-weight: bold;
+}
+
+div {
+    padding:0.1em;
 }
 
 ul {
@@ -68,10 +88,45 @@ h2 {
 h3 {
     background-color: #006F54;
     color: #ffffff;
-    padding: 5px;
+    padding: 0.3em;
 }
 
 h4 {
     background-color: #96928D;
-    padding-left: 4px;
+    padding-left: 0.3em;
 }
+
+
+@media screen and (min-width: 60em){
+    #knowledge ul {
+        display: grid;
+        grid-template-colums: 33vw 33vw 33vw ;
+        grid-auto-rows: auto auto auto;
+    }
+    #knowledge li {
+        padding: 0.1em;
+    }
+
+    #knowledge-job {
+        grid-column: 1;
+        grid-row: 1/4;
+    }
+
+    #knowledge-tools {
+        grid-column: 2;
+        grid-row: 1/4;
+    }
+
+    #knowledge-languages {
+        grid-column: 3;
+    }
+
+    #knowledge-driving-license {
+        grid-column: 3;
+    }
+
+    #knowledge-certificates {
+        grid-column: 3;
+    }
+}
+
